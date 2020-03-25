@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import List from '@/views/List'
-import Blog from '@/views/Blog'
+import Post from '@/views/Post'
 import Entry from '@/views/Entry'
 
 Vue.use(VueRouter)

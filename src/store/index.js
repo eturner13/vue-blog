@@ -16,6 +16,9 @@ export default new Vuex.Store({
     ]
   },
   mutations: {
+    addPost(state, post) {
+      state.posts.push(post);
+    }
   },
   actions: {
   },

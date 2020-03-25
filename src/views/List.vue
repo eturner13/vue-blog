@@ -2,7 +2,7 @@
     <div class="list">
         <div class="header">
             <span>Eric's Vue Blog!</span>
-            <button>Make New Entry<button>
+            <button @click="goToEntry">Make New Entry</button>
         </div>
         <div class="posts">
             <div v-for="post in posts" :key="post.id">
@@ -21,10 +21,21 @@ export default {
     components: { PostSummary },
     computed: {
         ...mapState(['posts'])
+    },
+    methods: {
+        goToEntry() {
+            this.$router.push({ name: 'entry' });
+        }
     }
 }
 </script>
 
 <style scoped lang="scss">
-
+    .header {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px;
+    }
 </style>

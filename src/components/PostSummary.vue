@@ -16,5 +16,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+    .post {
+        margin: 20px;
+    }
 </style>
