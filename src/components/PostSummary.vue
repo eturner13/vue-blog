@@ -5,7 +5,6 @@
         <div class="author">{{ post.author }}</div>
         <div class="title">{{ post.title }}</div>
         <div class="body">{{ post.body }}</div>
-        <button @click="goToPost">Go to Post</button>
     </div>
 </template>
 
@@ -14,16 +13,15 @@
 export default {
     name: 'PostSummary',
     props: ['post'],
-    methods: {
-        goToPost() {
-            this.$router.push('/post/' + this.post.id)
-        },
-    }
+    methods: {}
 }
 </script>
 
 <style scoped lang="scss">
     .post {
         margin: 20px;
+        border: solid;
+        height: 150 px;
+        width: 80%;
     }
 </style>

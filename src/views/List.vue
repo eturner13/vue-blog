@@ -6,7 +6,8 @@
         </div>
         <div class="posts">
             <div v-for="post in posts" :key="post.id">
-                <PostSummary :post="post"/>
+                <PostSummary class="abrev" :post="post"/>
+                <button @click="goToPost">Go to Post</button>
             </div>
         </div>
     </div>
@@ -25,7 +26,10 @@ export default {
     methods: {
         goToEntry() {
             this.$router.push({ name: 'entry' });
-        }
+        },
+        goToPost() {
+            this.$router.push('/post/' + this.post.id)
+        },
     }
 }
 </script>
@@ -37,5 +41,10 @@ export default {
         justify-content: space-between;
         align-items: center;
         margin: 20px;
+    }
+    .abrev {
+        border: solid;
+        height: 150px;
+        width: 80%;
     }
 </style>
