@@ -16,7 +16,7 @@ export default {
     props: ['post'],
     methods: {
         goToPost() {
-            this.$router.push('/post/:id')
+            this.$router.push('/post/' + this.post.id)
         },
     }
 }
