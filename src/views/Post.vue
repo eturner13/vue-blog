@@ -1,9 +1,7 @@
 <template>
     <div class="post">
         <div class="header">
-            <div v-for="post in posts" :key="post.id">
-                <PostSummary :post="post"/>
-            </div>
+            <PostSummary :post="selectedPost"/>
             <button @click="backToList">Back to List</button>    
         </div>  
     </div>
@@ -16,8 +14,12 @@ import { mapState } from 'vuex'
 export default {
     name: 'Post',
     components: { PostSummary },
+    props: ['id'],
     computed: {
-        ...mapState(['posts'])
+        ...mapState(['posts']),
+        selectedPost() {
+            return this.posts.find(post => +post.id === +this.id);
+        }
     },
     methods: {
         backToList() {
