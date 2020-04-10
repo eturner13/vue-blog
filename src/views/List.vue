@@ -7,7 +7,7 @@
         <div class="posts">
             <div v-for="post in posts" :key="post.id">
                 <PostSummary class="abrev" :post="post"/>
-                <button @click="goToPost">Go to Post</button>
+                <button @click="goToPost(post.id)">Go to Post</button>
             </div>
         </div>
     </div>
@@ -27,8 +27,8 @@ export default {
         goToEntry() {
             this.$router.push({ name: 'entry' });
         },
-        goToPost() {
-            this.$router.push('/post/' + this.post.id)
+        goToPost(id) {
+            this.$router.push('/post/' + id)
         },
     }
 }
